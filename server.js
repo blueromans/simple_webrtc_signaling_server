@@ -3,7 +3,6 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const cors = require("cors");
-const sirv = require("sirv");
 
 // ENVIRONMENT VARIABLES
 const PORT = process.env.PORT || 3030;
@@ -90,9 +89,6 @@ io.on("connection", (socket) => {
         }
     });
 });
-
-// SERVE STATIC FILES
-app.use(sirv("public", { DEV }));
 
 // RUN APP
 server.listen(PORT, console.log(`Listening on PORT ${PORT}`));
