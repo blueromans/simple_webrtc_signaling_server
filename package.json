@@ -3,14 +3,11 @@
     "version": "1.0.0",
     "description": "WebRTC signalling server using Socket.io with option for rooms and deployment instructions",
     "main": "server.js",
-    "repository": "git@github.com:aljanabim/simple_webrtc_signaling_server.git",
-    "author": "Mustafa Al-Janabi",
+    "repository": "git@github.com:blueromans/simple_webrtc_signaling_server.git",
+    "author": "Yaşar Özyurt",
     "license": "MIT",
     "scripts": {
-        "start": "env-cmd -f ./config/prod.env node server.js",
-        "dev": "env-cmd -f ./config/dev.env nodemon server.js",
-        "client1": "nodemon ./examples/example-client1.js",
-        "client2": "nodemon ./examples/example-client2.js"
+        "start": "node server.js"
     },
     "dependencies": {
         "cors": "^2.8.5",
