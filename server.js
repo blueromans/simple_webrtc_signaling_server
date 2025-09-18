@@ -89,6 +89,16 @@ io.on('connection', socket => {
       room: data.room,
     });
   });
+
+  socket.on('camera-state', (data) => {
+    console.log(`Camera state change in room ${data.room}: ${data.enabled}`);
+
+    // Broadcast camera state to other users in the room
+    socket.to(data.room).emit('camera-state', {
+      enabled: data.enabled,
+      from: data.from
+    });
+  });
   
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
